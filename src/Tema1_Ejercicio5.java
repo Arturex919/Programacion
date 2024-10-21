@@ -15,6 +15,7 @@ public class Tema1_Ejercicio5 {
         System.out.println ("10. (25 >= 7) AND NOT (7 <=2)= " + opera10);
         boolean opera11 =('H' < 'J') && ('9' != '7');
         System.out.println("11. ('H' < 'J') AND ('9' <> '7') ="+ opera11 );
+
         boolean opera12= (25 > 20 && 13 > 5);
         System.out.println("25 > 20 AND 13 > 5 = "+ opera12 );
         boolean opera13 = ( 10 + 4 < 15 - 3 && 2 * 5 + 1 > 14 - 2 * 2) ;

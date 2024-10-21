@@ -1,4 +1,4 @@
-package Tema1_Ejercicios;
+package Tema1_Ejercicio5;
 
 import java.util.Scanner;
 public class Tema1Ejercicio9 {

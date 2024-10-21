@@ -1,5 +1,4 @@
 package Tema2_Ejercicos;
-
 import java.util.Scanner;
  //area y perimetro de un  rectangulo
 public class T2_EJ2  {

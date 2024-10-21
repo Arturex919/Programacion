@@ -1,5 +1,4 @@
-package Tema1_Ejercicios;
-
+package Tema1_Ejercicio5;
 public class Tema1_Ejercicio5 {
     public static void main(String[] args) {
         System.out.println("1. 24%5 = "+24%5);

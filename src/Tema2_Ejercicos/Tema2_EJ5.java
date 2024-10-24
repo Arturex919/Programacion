@@ -1,7 +1,8 @@
 package Tema2_Ejercicos;
 
 import java.util.Scanner;
-
+//Realiza un programa que lea 3 números por consola y calcule la media
+//con decimales y sin decimales
 public class Tema2_EJ5 {
     public static void main(String[] args) {
         Scanner in= new Scanner(System.in) ;

@@ -12,6 +12,14 @@ public class Tema2_EJ4 {
         b = in.nextInt();
         System.out.println("ingrese un valor c");
         c = in.nextInt();
-        a= mayor ;
-        if ()
+        mayor =a ;
+        if (b>c) {
+            mayor = b ;
+        }
+        if (c>mayor){
+            mayor=c ;
+        }
+        System.out.println("el numero mayor es :"+mayor);
+
     }
+}

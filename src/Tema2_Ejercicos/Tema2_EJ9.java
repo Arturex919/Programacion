@@ -10,6 +10,7 @@ public class Tema2_EJ9 {
         a= in.nextDouble();
         b= a /1.08;
         System.out.println("su valor en euros es= "+b);
+        in.close();
     }
 }
 

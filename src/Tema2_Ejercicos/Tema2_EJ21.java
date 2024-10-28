@@ -9,5 +9,6 @@ public class Tema2_EJ21 {
         for (a=2; a  <= 1000; a+=2 ) {
             System.out.println(a);
         }
+        in.close();
     }
 }

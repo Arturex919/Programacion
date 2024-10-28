@@ -19,7 +19,5 @@ public class Tema2_EJ5 {
         System.out.println("el valor de la media con decimales es : "+media);
         System.out.println("el valor de la media sin decimales es : "+d);
         in.close();
-
-
     }
 }

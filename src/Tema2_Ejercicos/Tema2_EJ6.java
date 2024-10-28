@@ -18,6 +18,7 @@ public class Tema2_EJ6 {
         } else {
             System.out.println("es negativo");
         }
-        in.close();}
+        in.close();
+    }
 }
 

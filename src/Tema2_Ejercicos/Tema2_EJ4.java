@@ -19,6 +19,6 @@ public class Tema2_EJ4 {
             mayor=c ;
         }
         System.out.println("el numero mayor es :"+mayor);
-
+        in.close();
     }
 }

@@ -20,5 +20,6 @@ public class Tema2_EJ11 {
         } else {
             System.out.println("no son consecutivos");
         }
+        in.close();
     }
 }

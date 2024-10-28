@@ -16,6 +16,7 @@ public class Tema2_EJ7 {
             c= mayor-b;
         System.out.println("su numero mayor es= "+mayor);
         System.out.println("el resultado es : "+c);
+        in.close();
 
         }
     }

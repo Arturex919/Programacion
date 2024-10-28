@@ -13,5 +13,6 @@ public class Tema2_EJ3 {
                 P= b+b+b ;
         System.out.println("el area del triangulo es:"+A);
         System.out.println("El perimetro del triangulo es:"+ P);
+        in.close();
     }
 }

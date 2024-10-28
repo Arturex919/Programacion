@@ -10,5 +10,6 @@ public class Tema2_EJ8 {
         a= in.nextDouble();
         b= a *0.93;
         System.out.println("su valor en dolares es= "+b);
+        in.close();
     }
 }

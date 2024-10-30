@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class TEMA1_EJERCICIO8 {
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in) ;

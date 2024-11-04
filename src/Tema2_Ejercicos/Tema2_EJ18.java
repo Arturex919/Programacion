@@ -14,5 +14,6 @@ public class Tema2_EJ18 {
       } else{
             System.out.println("errooor");
         }
+      in.close();
     }
 }

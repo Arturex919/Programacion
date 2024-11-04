@@ -25,5 +25,6 @@ public class Tema2_EJ24 {
         }
         System.out.println("el numeros de aprobado es:"+b);
         System.out.println("el numeros de reprobado es:" +c);
+        in.close();
     }
 }

@@ -23,6 +23,4 @@ public class Tema2_EJ26 {
 
 
     }
-
-
 }

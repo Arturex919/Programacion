@@ -13,7 +13,7 @@ public class Tema2_EJ19 {
             }
             in.close();
         }
-
+        in.close();
     }
 }
 

@@ -17,8 +17,5 @@ public class Tema2_EJ23 {
             System.out.println("ingrese un numero");
             num= in.nextInt();
         }
-
-
-
     }
      }

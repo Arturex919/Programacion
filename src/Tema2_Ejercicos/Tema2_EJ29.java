@@ -22,6 +22,6 @@ public class Tema2_EJ29 {
                 System.out.println("es un numero mayor a :" + num);
             }
         }
-        System.out.println("el numero es: " +randomInt);
+        System.out.println("el numero es: " + randomInt);
     }
 }

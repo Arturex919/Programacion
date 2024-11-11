@@ -2,23 +2,25 @@ package Tema2_Ejercicos;
 import java.util.Scanner;
 public class Tema2_EJ27 {
     public static void main(String[] args) {
-        boolean primo=true;
         Scanner in = new Scanner(System.in);
-        int cont=0 ,num=2,a;
-        System.out.println("los 20 numeros primos son");
+        int cantidad = 20;
+        int cont = 0;
+        int num = 2;
+        System.out.println("sus primeros 20 numeros primos son:");
+        while (cont < 20) {
 
-        while (cont<=20){
-            if (primo){
-                System.out.println(num+"");
-                cont++;
+            boolean esPrimo = true;
+
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    esPrimo = false;
+                }
             }
-            num++;
-            //if (num<1);
-            for (a=1;a<=Math.sqrt(num);a++){
-                if (num%a==0);
-            }
+        if (esPrimo){
+            System.out.println(num);
+            cont++;
         }
-        in.close();
+        num++;
     }
 }
-
+}

@@ -7,17 +7,17 @@ public class Juego {public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     int opciones;
     int opcions = 0;
-    int jugador_1, velocidad = 0, ataque = 0, defensa = 0, lifepoint = 0, sal;
+    int jugador_1, velocidad = 0, ataque = 0, defensa = 0, lifepoint = 0, sal = 0;
     boolean salir = false;
     System.out.println("El maximo de poder de su personaje no debe de pasar de 500P");
     System.out.println("Las caracteristicas del jugador debe rondar entre 1P - 200P");
     System.out.print("¿Deseas continuar? (Y/N): ");
-    opciones = in.next().charAt(0);
+    opciones = in.next().toUpperCase().charAt(0);
     //colocamos un if para que el usuario si desea entre o no al juego
     // dentor del if colocamos un booleano para que no digas cuales son nuestros valores reales o falso
     //  y creamos un do while para que no sobrepase el valor maximo
     // y que lo pueda corregir en caso de que falle//
-    if (opciones == 'Y' || opciones == 'y') {
+    if (opciones == 'Y') {
         //cree un booleano con caracteristicas correcta para saber si lo datos
         //que introducidos son correcto o no en caso de que no vuelve hasta que
         //sean correcto,lo colocamos arriba del do y lo volvemos añadir en el do, despues añadimos un do-while para que en el do contenga lo que es
@@ -26,13 +26,10 @@ public class Juego {public static void main(String[] args) {
         boolean caracteristica_correctas;
         do {
             caracteristica_correctas = true;
-            if (!salir) {
+            if (!salir) {//sustituir a char
                 System.out.println("Toque 0 para salir o 1 para continuar");
                 sal = in.nextInt();
-                if (sal == 0) {
-                    salir = true;
-                    System.out.println("has salido del juego");
-                } else {
+
                     System.out.println("ingrese la velocidad del Jugador 1");
                     velocidad = in.nextInt();
                     while (velocidad > 200 || velocidad < 1) {
@@ -41,16 +38,7 @@ public class Juego {public static void main(String[] args) {
                         System.out.print("Ingrese la velocidad del jugador 1: ");
                         velocidad = in.nextInt();
                     }
-                }
-            }
-            if (!salir) {
-                System.out.println("Toque 0 para salir o 1 para continuar");
-                sal = in.nextInt();
-                if (sal == 0) {
-                    salir = true;
-                    System.out.println("has salido del juego");
-                } else {
-                    System.out.println("");
+
                     System.out.println("Ingrese la ataque del jugador 1");
                     ataque = in.nextInt();
                     while (ataque > 200 || ataque < 1) {
@@ -59,16 +47,9 @@ public class Juego {public static void main(String[] args) {
                         System.out.print("Ingrese el ataque del jugador 1: ");
                         ataque = in.nextInt();
                     }
-                }
-            }
-            if (!salir) {
-                System.out.println("Toque 0 para salir o 1 para continuar");
-                sal = in.nextInt();
-                if (sal == 0) {
-                    salir = true;
-                    System.out.println("has salido del juego");
-                } else {
-                    System.out.println("");
+
+
+
                     System.out.println("ingrese la defensa del jugador 1");
                     defensa = in.nextInt();
                     while (defensa > 200 || defensa < 1) {
@@ -77,16 +58,9 @@ public class Juego {public static void main(String[] args) {
                         System.out.print("Ingrese la defensa del jugador 1: ");
                         defensa = in.nextInt();
                     }
-                }
-            }
-            if (!salir) {
-                System.out.println("Toque 0 para salir o 1 para continuar");
-                sal = in.nextInt();
-                if (sal == 0) {
-                    salir = true;
-                    System.out.println("has salido del juego");
-                } else {
-                    System.out.println("");
+
+
+
                     System.out.println("ingrese la vida del jugador 1");
                     lifepoint = in.nextInt();
                     while (lifepoint > 200 || lifepoint < 1) {
@@ -96,16 +70,17 @@ public class Juego {public static void main(String[] args) {
                         lifepoint = in.nextInt();
                     }
                 }
-            }
+
             jugador_1 = velocidad + ataque + defensa + lifepoint;
             if (jugador_1 > 500) {
                 System.out.println("ERROR");
                 System.out.println("ingrese correctamente los datos...");
                 caracteristica_correctas = false;
             }
-            //creo un while porque hasta que el booleano me diga que es falso este se va a repetir hasta
+            //creo un do while porque hasta que el booleano me diga que es falso este se va a repetir hasta
             //que se complete o me valide los datos ya qu eme verifica los datos hasta que sea correcto//
         } while (!caracteristica_correctas);
+
         System.out.println("FELICIDADES");
         System.out.println("Su personaje tiene un total de: " + jugador_1 + "P");
         System.out.println("Listo Empecemos el juego");
@@ -128,7 +103,7 @@ public class Juego {public static void main(String[] args) {
                     System.out.println("Ataque: " + ataque + "P");
                     System.out.println("Defensa: " + defensa + "P");
                     System.out.println("Vida: " + lifepoint + "P");
-                    System.out.println("El total de puntos del Jugador 2 es : "+jugador_1);
+                    System.out.println("El total de puntos del Jugador 2 es : " + jugador_1);
                 }
                 case 2 -> {
                     System.out.println("¿Qué atributo deseas corregir?");
@@ -156,9 +131,9 @@ public class Juego {public static void main(String[] args) {
                             System.out.println("Ingrese la nueva vida (entre 1 y 200): ");
                             lifepoint = in.nextInt();
                         }
-                        case 5->{
+                        case 5 -> {
                             System.out.println("no se ha cambiando ningun atributo");
-                            }
+                        }
 
                         default -> System.out.println("opcion no valida");
                     }
@@ -171,13 +146,6 @@ public class Juego {public static void main(String[] args) {
                     do {
                         caracteristica_correctas2 = true;
 
-                        if (!salir) {
-                            System.out.println("Toque 0 para salir o 1 para continuar");
-                            sal = in.nextInt();
-                            if (sal == 0) {
-                                salir = true;
-                                System.out.println("has salido del juego");
-                            } else {
                                 System.out.println("ingrese la velocidad del Jugador 2");
                                 velocidad_2 = in.nextInt();
                                 while (velocidad_2 > 200 || velocidad_2 < 1) {
@@ -186,16 +154,7 @@ public class Juego {public static void main(String[] args) {
                                     System.out.print("Ingrese la velocidad del jugador 2: ");
                                     velocidad_2 = in.nextInt();
                                 }
-                            }
-                        }
-                        if (!salir) {
-                            System.out.println("Toque 0 para salir o 1 para continuar");
-                            sal = in.nextInt();
-                            if (sal == 0) {
-                                salir = true;
-                                System.out.println("has salido del juego");
-                            } else {
-                                System.out.println("");
+
                                 System.out.println("Ingrese la ataque del jugador 2");
                                 ataque_2 = in.nextInt();
                                 while (ataque_2 > 200 || ataque_2 < 1) {
@@ -204,16 +163,7 @@ public class Juego {public static void main(String[] args) {
                                     System.out.print("Ingrese el ataque del jugador 2: ");
                                     ataque_2 = in.nextInt();
                                 }
-                            }
-                        }
-                        if (!salir) {
-                            System.out.println("Toque 0 para salir o 1 para continuar");
-                            sal = in.nextInt();
-                            if (sal == 0) {
-                                salir = true;
-                                System.out.println("has salido del juego");
-                            } else {
-                                System.out.println("");
+
                                 System.out.println("ingrese la defensa del jugador 2");
                                 defensa_2 = in.nextInt();
                                 while (defensa_2 > 200 || defensa_2 < 1) {
@@ -222,15 +172,7 @@ public class Juego {public static void main(String[] args) {
                                     System.out.print("Ingrese la defensa del jugador 2: ");
                                     defensa_2 = in.nextInt();
                                 }
-                            }
-                        }
-                        if (!salir) {
-                            System.out.println("Toque 0 para salir o 1 para continuar");
-                            sal = in.nextInt();
-                            if (sal == 0) {
-                                salir = true;
-                                System.out.println("has salido del juego");
-                            } else {
+
                                 System.out.println("");
                                 System.out.println("ingrese la vida del jugador 2");
                                 lifepoint_2 = in.nextInt();
@@ -240,8 +182,8 @@ public class Juego {public static void main(String[] args) {
                                     System.out.println("ingrese la vida del jugador 2");
                                     lifepoint_2 = in.nextInt();
                                 }
-                            }
-                        }
+
+
                         jugador_2 = velocidad_2 + ataque_2 + defensa_2 + lifepoint_2;
                         if (jugador_2 > 500) {
                             System.out.println("ERROR");
@@ -270,7 +212,7 @@ public class Juego {public static void main(String[] args) {
                                 System.out.println("Ataque: " + ataque_2 + "P");
                                 System.out.println("Defensa: " + defensa_2 + "P");
                                 System.out.println("Vida: " + lifepoint_2 + "P");
-                                System.out.println("El total de puntos del Jugador 2 es : "+jugador_2);
+                                System.out.println("El total de puntos del Jugador 2 es : " + jugador_2);
                             }
                             case 2 -> {
                                 System.out.println("¿Qué atributo deseas corregir?");
@@ -297,13 +239,13 @@ public class Juego {public static void main(String[] args) {
                                         System.out.println("Ingrese la nueva vida (entre 1 y 200): ");
                                         lifepoint_2 = in.nextInt();
                                     }
-                                    case 5->{
+                                    case 5 -> {
                                         System.out.println("no se ha cambiando ningun atributo");
                                     }
                                     default -> System.out.println("opcion no valida");
                                 }
                             }
-                            case 3->{
+                            case 3 -> {
                                 System.out.println("##############################################################################\n" +
                                         "#░█▀▄░▀█▀░█▀▀░█▀█░█░█░█▀▀░█▀█░▀█▀░█▀▄░█▀█░█▀▀░░░█▀█░█░░░░░▀▀█░█░█░█▀▀░█▀▀░█▀█#\n" +
                                         "#░█▀▄░░█░░█▀▀░█░█░▀▄▀░█▀▀░█░█░░█░░█░█░█░█░▀▀█░░░█▀█░█░░░░░░░█░█░█░█▀▀░█░█░█░█#\n" +
@@ -318,7 +260,6 @@ public class Juego {public static void main(String[] args) {
                                 System.out.println("Puntos de vida:" + lifepoint + "P");
                                 System.out.println("");
                                 System.out.println("");
-                                System.out.println("");
                                 System.out.println("=====================================================");
                                 System.out.println("JUGADOR 2");
                                 System.out.println("Velocidad:" + velocidad_2 + "P");
@@ -331,43 +272,37 @@ public class Juego {public static void main(String[] args) {
                                 System.out.println("");
                                 //creamos una ronda para que esta se vaya cambiando a medida de que se vaya avanzando el
                                 //juego para que cambien su valores en si//
-                                int ronda=1;
-                                int cont=23;
-                                while (ronda==23){
-                                while (jugador_1>0 && jugador_2>0) {
+
+                                int ronda = 1;
+                                Random random = new Random();
+                                System.out.println("empieza la pelea");
+                                while (lifepoint > 0 && lifepoint_2 > 0) {
+                                    int danio, danio2, total, total2;
                                     System.out.println("=====================================================");
-                                    System.out.println("-----------------  RONDA" + " " + ronda + " ----------------");
-                                    System.out.println("El JUGADOR CON MAYOR VELOCIDAD INICA LA PARTIDA");
-                                    if (velocidad_2>velocidad){
-                                        System.out.println("El player 2 inicia la partida");
-                                    } else if (velocidad_2 < velocidad) {
-                                        System.out.println("El player 1 inicia la partida");
-                                    }else {
-                                        Random random=new Random();
-                                        int inicia =random.nextInt(2);
-                                        if (inicia==0){
-                                            System.out.println("Ambos Jugadores tienen la misma velocidad");
-                                            System.out.println("Se realizara al azar para ver quien inicia ");
-                                            System.out.println("Inserte enter para continuar ");
-                                            in.nextLine();
-                                            System.out.println("Player 1 comienza la partida");
-                                        }else {
-                                            System.out.println("Player 2 comienza la partida");
-                                        }
+                                    System.out.println("-------------- RONDA " + ronda + " ------------------");
+                                    danio = ataque_2 - defensa;
+                                    if (velocidad >= velocidad_2) {
+                                        danio = ataque - defensa / 2;
+                                        total = danio - random.nextInt(3);
+                                        System.out.println("el daño que recibe el player 1 es: " + total);
+                                    } else {
+                                        danio2 = ataque_2 - defensa;
+                                        total2 = danio - random.nextInt(3);
+                                        System.out.println("el daño que recibe el player 1 es: " + total2);
+
                                     }
+                                    ronda++;
+
                                 }
-                                }
-
-
-                                salir=true;
-
                             }
                         }
                     }
                 }
             }
+        }
+    }
 /*
-
+-
 
             System.out.println("##############################################################################\n" +
                     "#░█▀▄░▀█▀░█▀▀░█▀█░█░█░█▀▀░█▀█░▀█▀░█▀▄░█▀█░█▀▀░░░█▀█░█░░░░░▀▀█░█░█░█▀▀░█▀▀░█▀█#\n" +
@@ -389,4 +324,3 @@ public class Juego {public static void main(String[] args) {
     }*/
         }
     }
-}}

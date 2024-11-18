@@ -32,7 +32,9 @@ public class Juego_Final {
                 "+============================================================================+");
         System.out.println("Seleccione la forma en la que quiere jugar:");
         System.out.println("1. Jugar contra la máquina");
+        System.out.println("");
         System.out.println("2. Multiplayer");
+        System.out.println("EL modo Multiplayer es perzonalizado");
         System.out.print("Elija (1 o 2): ");
         juego = in.nextInt();
 
@@ -244,6 +246,7 @@ public class Juego_Final {
 
             while (!finDelJuego) {
                 System.out.println("---------- Ronda " + ronda + " --------");
+
                 System.out.println("Vida Jugador 1: [" + "❤️".repeat((lifepointPc * 20) / 200) + "] " + lifepointPc);
                 System.out.println("Vida Jugador 2: [" + "❤️".repeat((lifepointCpu * 20) / 200) + "] " + lifepointCpu);
 
@@ -590,7 +593,7 @@ public class Juego_Final {
                     opcions = in.nextInt();
                     switch (opcions) {
                         case 1 -> {
-                            System.out.println("Atributos del Jugador 2:");
+                            System.out.println("Atributos del Jugador 1:");
                             System.out.println("=====================================================");
                             System.out.println("⚡" + "Velocidad:" + velocidad + "P");
                             System.out.println("⚔️" + "Ataque:" + ataque + "P");
@@ -982,8 +985,8 @@ public class Juego_Final {
                                                     System.out.println("");
 
                                                     System.out.println("");
-                                                    System.out.print("Vida Player 2: [");
-                                                    int Barra = (lifepoint * 20) / 100; // Longitud proporcional de la barra de vida
+                                                    System.out.print("Vida Player 1: [");
+                                                    int Barra = (lifepoint * 22) / 100; // Longitud proporcional de la barra de vida
                                                     for (int i = 0; i < 20; i++) {
                                                         if (i < Barra) {
                                                             System.out.print("❤️");
@@ -996,7 +999,7 @@ public class Juego_Final {
 
                                                     System.out.println("");
                                                     System.out.print("Vida Player 2: [");
-                                                    int Barra2 = (lifepoint_2 * 20) / 100;
+                                                    int Barra2 = (lifepoint_2 * 22) / 100;
                                                     for (int i = 0; i < 20; i++) {
                                                         if (i < Barra2) {
                                                             System.out.print("❤️");
@@ -1301,6 +1304,7 @@ public class Juego_Final {
                                                             if (confirmacion == 1) {
                                                                 fin_del_juego = true; // Esto terminará el juego.
                                                                 System.out.println("Has salido del juego.");
+                                                                salir=true;
                                                             } else {
                                                                 System.out.println("Regresando al menú principal...");
                                                             }
@@ -1641,6 +1645,7 @@ public class Juego_Final {
                                         System.out.println("opcion no valida");
                                     }
                                 }
+                                salir=true;
                             }
                         }case 4->{//primer swicht//
                             System.out.println("has decidido salir");
@@ -1651,7 +1656,6 @@ public class Juego_Final {
                         }
                     }
                     }
-                    salir=true;
                 }
             }else
 

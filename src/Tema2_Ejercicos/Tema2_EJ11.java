@@ -1,6 +1,5 @@
 package Tema2_Ejercicos;
 
-import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 public class Tema2_EJ11 {

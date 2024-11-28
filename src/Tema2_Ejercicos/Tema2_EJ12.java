@@ -1,6 +1,5 @@
 package Tema2_Ejercicos;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tema2_EJ12 {

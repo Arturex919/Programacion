@@ -15,26 +15,9 @@ public class Juego_Final {
         int jugador1pc, jugadorCpu;
         boolean caracteristicasCorrectas = false;
         int personajes0;
-        System.out.println("+============================================================================+\n" +
-                "|██████╗ ██╗███████╗███╗   ██╗██╗   ██╗███████╗███╗   ██╗██╗██████╗  ██████╗ |\n" +
-                "|██╔══██╗██║██╔════╝████╗  ██║██║   ██║██╔════╝████╗  ██║██║██╔══██╗██╔═══██╗|\n" +
-                "|██████╔╝██║█████╗  ██╔██╗ ██║██║   ██║█████╗  ██╔██╗ ██║██║██║  ██║██║   ██║|\n" +
-                "|██╔══██╗██║██╔══╝  ██║╚██╗██║╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║██║  ██║██║   ██║|\n" +
-                "|██████╔╝██║███████╗██║ ╚████║ ╚████╔╝ ███████╗██║ ╚████║██║██████╔╝╚██████╔╝|\n" +
-                "|╚═════╝ ╚═╝╚══════╝╚═╝  ╚═══╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚═╝╚═════╝  ╚═════╝ |\n" +
-                "|                                                                            |\n" +
-                "|         █████╗ ██╗              ██╗██╗   ██╗███████╗ ██████╗  ██████╗      |\n" +
-                "|        ██╔══██╗██║              ██║██║   ██║██╔════╝██╔════╝ ██╔═══██╗     |\n" +
-                "|        ███████║██║              ██║██║   ██║█████╗  ██║  ███╗██║   ██║     |\n" +
-                "|        ██╔══██║██║         ██   ██║██║   ██║██╔══╝  ██║   ██║██║   ██║     |\n" +
-                "|        ██║  ██║███████╗    ╚█████╔╝╚██████╔╝███████╗╚██████╔╝╚██████╔╝     |\n" +
-                "|        ╚═╝  ╚═╝╚══════╝     ╚════╝  ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝      |\n" +
-                "+============================================================================+");
         System.out.println("Seleccione la forma en la que quiere jugar:");
         System.out.println("1. Jugar contra la máquina");
-        System.out.println("");
         System.out.println("2. Multiplayer");
-        System.out.println("EL modo Multiplayer es perzonalizado");
         System.out.print("Elija (1 o 2): ");
         juego = in.nextInt();
 
@@ -246,7 +229,6 @@ public class Juego_Final {
 
             while (!finDelJuego) {
                 System.out.println("---------- Ronda " + ronda + " --------");
-
                 System.out.println("Vida Jugador 1: [" + "❤️".repeat((lifepointPc * 20) / 200) + "] " + lifepointPc);
                 System.out.println("Vida Jugador 2: [" + "❤️".repeat((lifepointCpu * 20) / 200) + "] " + lifepointCpu);
 
@@ -593,7 +575,7 @@ public class Juego_Final {
                     opcions = in.nextInt();
                     switch (opcions) {
                         case 1 -> {
-                            System.out.println("Atributos del Jugador 1:");
+                            System.out.println("Atributos del Jugador 2:");
                             System.out.println("=====================================================");
                             System.out.println("⚡" + "Velocidad:" + velocidad + "P");
                             System.out.println("⚔️" + "Ataque:" + ataque + "P");
@@ -976,17 +958,15 @@ public class Juego_Final {
                                         boolean critico = random.nextInt(50) < probabilidad_critico;
                                         //creamos el while para determinar si el fin del juego es verdadero o no en caso de no
                                         //serlo sigue y en caso de que el juego haya acabado este sera true//
-                                        if (turnoJugador1) {
                                         while (fin_del_juego) {
-                                            System.out.println("");
+                                            if (turnoJugador1) {
                                                 while (fin_del_juego) {
                                                     System.out.println("=================================================");
                                                     System.out.println("----------Ronda--" + ronda + "--------");
                                                     System.out.println("");
-
                                                     System.out.println("");
                                                     System.out.print("Vida Player 1: [");
-                                                    int Barra = (lifepoint * 22) / 100; // Longitud proporcional de la barra de vida
+                                                    int Barra = Math.max(1,(lifepoint * 20) / 100); // Longitud proporcional de la barra de vida
                                                     for (int i = 0; i < 20; i++) {
                                                         if (i < Barra) {
                                                             System.out.print("❤️");
@@ -994,21 +974,22 @@ public class Juego_Final {
                                                             System.out.print(" ");
                                                         }
                                                     }
-                                                    System.out.println("] " + lifepoint);
+                                                    System.out.println("] " + lifepoint+"%");
                                                     System.out.println("");
 
                                                     System.out.println("");
                                                     System.out.print("Vida Player 2: [");
-                                                    int Barra2 = (lifepoint_2 * 22) / 100;
+                                                    int Barra2 = Math.max(1,(lifepoint * 20) / 100); // Longitud proporcional de la barra de vida
                                                     for (int i = 0; i < 20; i++) {
-                                                        if (i < Barra2) {
+                                                        if (i < Barra) {
                                                             System.out.print("❤️");
                                                         } else {
                                                             System.out.print(" ");
                                                         }
                                                     }
-                                                    System.out.println("] " + lifepoint_2);
+                                                    System.out.println("] " + lifepoint_2+"%");
                                                     System.out.println("");
+
 
                                                     System.out.println("Player 1:");
                                                     System.out.println("¿Que deseas hacer?");
@@ -1076,8 +1057,7 @@ public class Juego_Final {
                                                                                 "|██╔════╝ ██╔══██╗████╗  ██║██╔══██╗                                                                                                               |\n" +
                                                                                 "|██║  ███╗███████║██╔██╗ ██║███████║                                                                                                               |\n" +
                                                                                 "|██║   ██║██╔══██║██║╚██╗██║██╔══██║                                                                                                               |\n" +
-                                                                                "|╚██████╔╝██║  ██║██║ ╚████║██║  ██║      ");
-                                                                        fin_del_juego = false;
+                                                                                "|╚██████╔╝██║  ██║██║ ╚████║██║  ██║      ");                                                                     fin_del_juego = false;
                                                                     }
                                                                 }
 
@@ -1120,7 +1100,6 @@ public class Juego_Final {
                                                                                         "|██║  ███╗███████║██╔██╗ ██║███████║                                                                                                               |\n" +
                                                                                         "|██║   ██║██╔══██║██║╚██╗██║██╔══██║                                                                                                               |\n" +
                                                                                         "|╚██████╔╝██║  ██║██║ ╚████║██║  ██║      ");
-
                                                                         fin_del_juego = false;
                                                                     }
                                                                 }
@@ -1162,7 +1141,6 @@ public class Juego_Final {
                                                                                 "|██║  ███╗███████║██╔██╗ ██║███████║                                                                                                               |\n" +
                                                                                 "|██║   ██║██╔══██║██║╚██╗██║██╔══██║                                                                                                               |\n" +
                                                                                 "|╚██████╔╝██║  ██║██║ ╚████║██║  ██║      ");
-
                                                                         fin_del_juego = false;
                                                                     }
                                                                 }
@@ -1204,7 +1182,6 @@ public class Juego_Final {
                                                                                 "|██║  ███╗███████║██╔██╗ ██║███████║                                                                                                               |\n" +
                                                                                 "|██║   ██║██╔══██║██║╚██╗██║██╔══██║                                                                                                               |\n" +
                                                                                 "|╚██████╔╝██║  ██║██║ ╚████║██║  ██║      ");
-
                                                                         fin_del_juego = false;
                                                                     }
                                                                 }
@@ -1294,7 +1271,6 @@ public class Juego_Final {
                                                                         "|██║  ███╗███████║██╔██╗ ██║███████║                                                                                                               |\n" +
                                                                         "|██║   ██║██╔══██║██║╚██╗██║██╔══██║                                                                                                               |\n" +
                                                                         "|╚██████╔╝██║  ██║██║ ╚████║██║  ██║      ");
-
                                                                 fin_del_juego = false;
                                                             }
                                                         }
@@ -1304,7 +1280,6 @@ public class Juego_Final {
                                                             if (confirmacion == 1) {
                                                                 fin_del_juego = true; // Esto terminará el juego.
                                                                 System.out.println("Has salido del juego.");
-                                                                salir=true;
                                                             } else {
                                                                 System.out.println("Regresando al menú principal...");
                                                             }
@@ -1314,7 +1289,7 @@ public class Juego_Final {
 
                                                     //compruena quien de los jugares tiene 0
                                                     if (lifepoint_2 <= 0) {
-                                                        System.out.println();
+                                                        System.out.println("player 1 gana");
                                                         fin_del_juego = false;
                                                     } else {
                                                         System.out.println("TURNO DEL JUGADOR 2");
@@ -1620,32 +1595,24 @@ public class Juego_Final {
 
 
                                                     }
-                                                    if (lifepoint <= 0 || lifepoint_2 <= 0) {
-                                                        lifepoint=0;
-                                                        lifepoint_2=0;
-                                                        fin_del_juego = true;
-                                                    }
                                                     ronda++;
                                                 }
                                             }
-
+                                            //que te vean los de las rondas
+                                            if (lifepoint <= 0 || lifepoint_2 <= 0) {
+                                                fin_del_juego = true;
+                                            }
+                                            ronda++;
                                         }
                                     }
                                     case 4->{
-                                        System.out.println("\n" + "\n" +
-                                                " _____ ___ _   _   ____  _____ _           _ _   _ _____ ____  ___  \n" +
-                                                "|  ___|_ _| \\ | | |  _ \\| ____| |         | | | | | ____/ ___|/ _ \\ \n" +
-                                                "| |_   | ||  \\| | | | | |  _| | |      _  | | | | |  _|| |  _| | | |\n" +
-                                                "|  _|  | || |\\  | | |_| | |___| |___  | |_| | |_| | |__| |_| | |_| |\n" +
-                                                "|_|   |___|_| \\_| |____/|_____|_____|  \\___/ \\___/|_____\\____|\\___/ \n" +
-                                                "\n")
-                                        ;salir=true;
+                                        System.out.println("has decidido salir");
+                                        salir=true;
                                     }
                                     default -> {
                                         System.out.println("opcion no valida");
                                     }
                                 }
-                                salir=true;
                             }
                         }case 4->{//primer swicht//
                             System.out.println("has decidido salir");
@@ -1656,6 +1623,7 @@ public class Juego_Final {
                         }
                     }
                     }
+                    salir=true;
                 }
             }else
 
@@ -1667,6 +1635,5 @@ public class Juego_Final {
                         "|░▀░▀░▀░▀░▀▀▀░░▀░░▀░▀░░░▀▀▀░▀░▀░░░▀░░░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀░▀░▀░▀░▀░▀░▀░▀|\n" +
                         "+============================================================================+");
         }
-        in.close();
     }
 }

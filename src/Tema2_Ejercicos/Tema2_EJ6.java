@@ -1,6 +1,5 @@
 package Tema2_Ejercicos;
 
-import javax.security.auth.login.AccountLockedException;
 import java.util.Scanner;
 
 //Realiza un programa que determina si el número leído por consola es

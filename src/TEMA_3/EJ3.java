@@ -1,5 +1,4 @@
-package Tema2_Ejercicos.TEMA_3;
-
+package TEMA_3;
 import java.util.Scanner;
 //Crea un programa que pida al usuario un radio válido por teclado (>0) y
 //calcule la superficie y perímetro de un círculo. Necesitarás implementar

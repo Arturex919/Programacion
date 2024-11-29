@@ -1,4 +1,4 @@
-package Tema2_Ejercicos.TEMA_3;
+package TEMA_3;
 
 import java.util.Scanner;
 public class EJ {
@@ -33,3 +33,5 @@ public class EJ {
         }
     }
 }
+//funcion calcular =devuelve valor//
+//proceso no devuelve//
